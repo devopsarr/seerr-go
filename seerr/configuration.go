@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "seerr-go/v0.2.0", // x-release-please-version
+		UserAgent:        "seerr-go/v0.2.1", // x-release-please-version
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
