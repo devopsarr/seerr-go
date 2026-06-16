@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1](https://github.com/devopsarr/seerr-go/compare/v0.2.0...v0.2.1) (2026-06-16)
+
+
+### Bug Fixes
+
+* add .goreleaser.yml template and update Makefile for Go release ([b1188f3](https://github.com/devopsarr/seerr-go/commit/b1188f301b1fc17a3c933db59f56a446a9b24902))
+* add .goreleaser.yml template and update Makefile for Go release ([2f123a3](https://github.com/devopsarr/seerr-go/commit/2f123a3508556a2ce81c1281bc3558b56260e06a))
+
 ## [0.2.0](https://github.com/devopsarr/seerr-go/compare/v0.1.0...v0.2.0) (2026-06-16)
 
 
