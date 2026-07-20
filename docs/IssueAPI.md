@@ -641,7 +641,7 @@ Other parameters are passed through a pointer to a apiGetIssueCountRequest struc
 
 ## UpdateIssueComment
 
-> IssueComment UpdateIssueComment(ctx, commentId).TestMetadatas2XXResponse(testMetadatas2XXResponse).Execute()
+> IssueComment UpdateIssueComment(ctx, commentId).UpdateIssueCommentRequest(updateIssueCommentRequest).Execute()
 
 Update issue comment
 
@@ -661,11 +661,11 @@ import (
 
 func main() {
 	commentId := "1" // string | 
-	testMetadatas2XXResponse := *seerrClient.NewTestMetadatas2XXResponse() // TestMetadatas2XXResponse | 
+	updateIssueCommentRequest := *seerrClient.NewUpdateIssueCommentRequest() // UpdateIssueCommentRequest | 
 
 	configuration := seerrClient.NewConfiguration()
 	apiClient := seerrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IssueAPI.UpdateIssueComment(context.Background(), commentId).TestMetadatas2XXResponse(testMetadatas2XXResponse).Execute()
+	resp, r, err := apiClient.IssueAPI.UpdateIssueComment(context.Background(), commentId).UpdateIssueCommentRequest(updateIssueCommentRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IssueAPI.UpdateIssueComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -691,7 +691,7 @@ Other parameters are passed through a pointer to a apiUpdateIssueCommentRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **testMetadatas2XXResponse** | [**TestMetadatas2XXResponse**](TestMetadatas2XXResponse.md) |  | 
+ **updateIssueCommentRequest** | [**UpdateIssueCommentRequest**](UpdateIssueCommentRequest.md) |  | 
 
 ### Return type
 
