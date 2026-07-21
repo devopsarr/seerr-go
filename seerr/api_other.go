@@ -246,7 +246,7 @@ func (a *OtherAPIService) GetCertificationsTvExecute(r ApiGetCertificationsTvReq
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
-			var v GetCertificationsMovie500Response
+			var v GetCertificationsTv500Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -375,7 +375,7 @@ func (a *OtherAPIService) GetKeywordByKeywordIdExecute(r ApiGetKeywordByKeywordI
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
-			var v TestMetadatas2XXResponse
+			var v GetKeywordByKeywordId500Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

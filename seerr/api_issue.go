@@ -1135,11 +1135,11 @@ type ApiUpdateIssueCommentRequest struct {
 	ctx context.Context
 	ApiService *IssueAPIService
 	commentId string
-	testMetadatas2XXResponse *TestMetadatas2XXResponse
+	updateIssueCommentRequest *UpdateIssueCommentRequest
 }
 
-func (r ApiUpdateIssueCommentRequest) TestMetadatas2XXResponse(testMetadatas2XXResponse TestMetadatas2XXResponse) ApiUpdateIssueCommentRequest {
-	r.testMetadatas2XXResponse = &testMetadatas2XXResponse
+func (r ApiUpdateIssueCommentRequest) UpdateIssueCommentRequest(updateIssueCommentRequest UpdateIssueCommentRequest) ApiUpdateIssueCommentRequest {
+	r.updateIssueCommentRequest = &updateIssueCommentRequest
 	return r
 }
 
@@ -1186,8 +1186,8 @@ func (a *IssueAPIService) UpdateIssueCommentExecute(r ApiUpdateIssueCommentReque
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.testMetadatas2XXResponse == nil {
-		return localVarReturnValue, nil, reportError("testMetadatas2XXResponse is required and must be specified")
+	if r.updateIssueCommentRequest == nil {
+		return localVarReturnValue, nil, reportError("updateIssueCommentRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1208,7 +1208,7 @@ func (a *IssueAPIService) UpdateIssueCommentExecute(r ApiUpdateIssueCommentReque
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.testMetadatas2XXResponse
+	localVarPostBody = r.updateIssueCommentRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

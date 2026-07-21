@@ -365,11 +365,11 @@ func (a *SettingsAPIService) CreateDiscoverExecute(r ApiCreateDiscoverRequest) (
 type ApiCreateDiscoverAddRequest struct {
 	ctx context.Context
 	ApiService *SettingsAPIService
-	updateDiscoverRequest *UpdateDiscoverRequest
+	createDiscoverAddRequest *CreateDiscoverAddRequest
 }
 
-func (r ApiCreateDiscoverAddRequest) UpdateDiscoverRequest(updateDiscoverRequest UpdateDiscoverRequest) ApiCreateDiscoverAddRequest {
-	r.updateDiscoverRequest = &updateDiscoverRequest
+func (r ApiCreateDiscoverAddRequest) CreateDiscoverAddRequest(createDiscoverAddRequest CreateDiscoverAddRequest) ApiCreateDiscoverAddRequest {
+	r.createDiscoverAddRequest = &createDiscoverAddRequest
 	return r
 }
 
@@ -413,8 +413,8 @@ func (a *SettingsAPIService) CreateDiscoverAddExecute(r ApiCreateDiscoverAddRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.updateDiscoverRequest == nil {
-		return localVarReturnValue, nil, reportError("updateDiscoverRequest is required and must be specified")
+	if r.createDiscoverAddRequest == nil {
+		return localVarReturnValue, nil, reportError("createDiscoverAddRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -435,7 +435,7 @@ func (a *SettingsAPIService) CreateDiscoverAddExecute(r ApiCreateDiscoverAddRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateDiscoverRequest
+	localVarPostBody = r.createDiscoverAddRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -9195,11 +9195,11 @@ func (a *SettingsAPIService) TestRadarrExecute(r ApiTestRadarrRequest) (*TestRad
 type ApiTestSonarrRequest struct {
 	ctx context.Context
 	ApiService *SettingsAPIService
-	testRadarrRequest *TestRadarrRequest
+	testSonarrRequest *TestSonarrRequest
 }
 
-func (r ApiTestSonarrRequest) TestRadarrRequest(testRadarrRequest TestRadarrRequest) ApiTestSonarrRequest {
-	r.testRadarrRequest = &testRadarrRequest
+func (r ApiTestSonarrRequest) TestSonarrRequest(testSonarrRequest TestSonarrRequest) ApiTestSonarrRequest {
+	r.testSonarrRequest = &testSonarrRequest
 	return r
 }
 
@@ -9242,8 +9242,8 @@ func (a *SettingsAPIService) TestSonarrExecute(r ApiTestSonarrRequest) (*TestRad
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.testRadarrRequest == nil {
-		return localVarReturnValue, nil, reportError("testRadarrRequest is required and must be specified")
+	if r.testSonarrRequest == nil {
+		return localVarReturnValue, nil, reportError("testSonarrRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -9264,7 +9264,7 @@ func (a *SettingsAPIService) TestSonarrExecute(r ApiTestSonarrRequest) (*TestRad
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.testRadarrRequest
+	localVarPostBody = r.testSonarrRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
