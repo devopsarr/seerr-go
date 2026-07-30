@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **ServerId** | Pointer to **float32** |  | [optional] 
 **ProfileId** | Pointer to **float32** |  | [optional] 
 **RootFolder** | Pointer to **string** |  | [optional] 
+**IgnoreQuota** | Pointer to **bool** | If true, this request will not count against the user&#39;s quota. Requires MANAGE_REQUESTS permission. | [optional] 
 
 ## Methods
 
@@ -299,6 +300,31 @@ SetRootFolder sets RootFolder field to given value.
 `func (o *MediaRequest) HasRootFolder() bool`
 
 HasRootFolder returns a boolean if a field has been set.
+
+### GetIgnoreQuota
+
+`func (o *MediaRequest) GetIgnoreQuota() bool`
+
+GetIgnoreQuota returns the IgnoreQuota field if non-nil, zero value otherwise.
+
+### GetIgnoreQuotaOk
+
+`func (o *MediaRequest) GetIgnoreQuotaOk() (*bool, bool)`
+
+GetIgnoreQuotaOk returns a tuple with the IgnoreQuota field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIgnoreQuota
+
+`func (o *MediaRequest) SetIgnoreQuota(v bool)`
+
+SetIgnoreQuota sets IgnoreQuota field to given value.
+
+### HasIgnoreQuota
+
+`func (o *MediaRequest) HasIgnoreQuota() bool`
+
+HasIgnoreQuota returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

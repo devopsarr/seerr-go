@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetStatus
 
-> GetStatus2XXResponse GetStatus(ctx).Execute()
+> GetStatus2XXResponse GetStatus(ctx).CheckUpdateAvailable(checkUpdateAvailable).Execute()
 
 Get Seerr status
 
@@ -30,10 +30,11 @@ import (
 )
 
 func main() {
+	checkUpdateAvailable := false // bool | If false, updateAvailable and commitsBehind will be omitted from the response. Defaults to the versionCheck setting. (optional)
 
 	configuration := seerrClient.NewConfiguration()
 	apiClient := seerrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PublicAPI.GetStatus(context.Background()).Execute()
+	resp, r, err := apiClient.PublicAPI.GetStatus(context.Background()).CheckUpdateAvailable(checkUpdateAvailable).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PublicAPI.GetStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -45,12 +46,16 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetStatusRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **checkUpdateAvailable** | **bool** | If false, updateAvailable and commitsBehind will be omitted from the response. Defaults to the versionCheck setting. | 
 
 ### Return type
 

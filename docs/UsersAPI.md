@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**CreateUserImportFromPlex**](UsersAPI.md#CreateUserImportFromPlex) | **Post** /user/import-from-plex | Import all users from Plex
 [**CreateUserRegisterPushSubscription**](UsersAPI.md#CreateUserRegisterPushSubscription) | **Post** /user/registerPushSubscription | Register a web push /user/registerPushSubscription
 [**CreateUserSettingsLinkedAccountsJellyfin**](UsersAPI.md#CreateUserSettingsLinkedAccountsJellyfin) | **Post** /user/{userId}/settings/linked-accounts/jellyfin | Link the provided Jellyfin account to the current user
+[**CreateUserSettingsLinkedAccountsJellyfinQuickconnect**](UsersAPI.md#CreateUserSettingsLinkedAccountsJellyfinQuickconnect) | **Post** /user/{userId}/settings/linked-accounts/jellyfin/quickconnect | Link Jellyfin/Emby account with Quick Connect
 [**CreateUserSettingsLinkedAccountsPlex**](UsersAPI.md#CreateUserSettingsLinkedAccountsPlex) | **Post** /user/{userId}/settings/linked-accounts/plex | Link the provided Plex account to the current user
 [**CreateUserSettingsMain**](UsersAPI.md#CreateUserSettingsMain) | **Post** /user/{userId}/settings/main | Update general settings for a user
 [**CreateUserSettingsNotifications**](UsersAPI.md#CreateUserSettingsNotifications) | **Post** /user/{userId}/settings/notifications | Update notification settings for a user
@@ -489,6 +490,76 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **createUserSettingsLinkedAccountsJellyfinRequest** | [**CreateUserSettingsLinkedAccountsJellyfinRequest**](CreateUserSettingsLinkedAccountsJellyfinRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [cookieAuth](../README.md#cookieAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateUserSettingsLinkedAccountsJellyfinQuickconnect
+
+> CreateUserSettingsLinkedAccountsJellyfinQuickconnect(ctx, userId).CreateAuthJellyfinQuickconnectAuthenticateRequest(createAuthJellyfinQuickconnectAuthenticateRequest).Execute()
+
+Link Jellyfin/Emby account with Quick Connect
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	seerrClient "github.com/devopsarr/seerr-go/seerr"
+)
+
+func main() {
+	userId := float32(8.14) // float32 | 
+	createAuthJellyfinQuickconnectAuthenticateRequest := *seerrClient.NewCreateAuthJellyfinQuickconnectAuthenticateRequest("Secret_example") // CreateAuthJellyfinQuickconnectAuthenticateRequest | 
+
+	configuration := seerrClient.NewConfiguration()
+	apiClient := seerrClient.NewAPIClient(configuration)
+	r, err := apiClient.UsersAPI.CreateUserSettingsLinkedAccountsJellyfinQuickconnect(context.Background(), userId).CreateAuthJellyfinQuickconnectAuthenticateRequest(createAuthJellyfinQuickconnectAuthenticateRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.CreateUserSettingsLinkedAccountsJellyfinQuickconnect``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **float32** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateUserSettingsLinkedAccountsJellyfinQuickconnectRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **createAuthJellyfinQuickconnectAuthenticateRequest** | [**CreateAuthJellyfinQuickconnectAuthenticateRequest**](CreateAuthJellyfinQuickconnectAuthenticateRequest.md) |  | 
 
 ### Return type
 
