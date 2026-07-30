@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **IssueType** | Pointer to **float32** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **MediaId** | Pointer to **float32** |  | [optional] 
+**UserId** | Pointer to **NullableFloat32** |  | [optional] 
 
 ## Methods
 
@@ -102,6 +103,41 @@ SetMediaId sets MediaId field to given value.
 
 HasMediaId returns a boolean if a field has been set.
 
+### GetUserId
+
+`func (o *CreateIssueRequest) GetUserId() float32`
+
+GetUserId returns the UserId field if non-nil, zero value otherwise.
+
+### GetUserIdOk
+
+`func (o *CreateIssueRequest) GetUserIdOk() (*float32, bool)`
+
+GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserId
+
+`func (o *CreateIssueRequest) SetUserId(v float32)`
+
+SetUserId sets UserId field to given value.
+
+### HasUserId
+
+`func (o *CreateIssueRequest) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
+
+### SetUserIdNil
+
+`func (o *CreateIssueRequest) SetUserIdNil(b bool)`
+
+ SetUserIdNil sets the value for UserId to be an explicit nil
+
+### UnsetUserId
+`func (o *CreateIssueRequest) UnsetUserId()`
+
+UnsetUserId ensures that no value is present for UserId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

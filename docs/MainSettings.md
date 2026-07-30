@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **NewPlexLogin** | Pointer to **bool** |  | [optional] 
 **DefaultPermissions** | Pointer to **float32** |  | [optional] 
 **EnableSpecialEpisodes** | Pointer to **bool** |  | [optional] 
+**VersionCheck** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -309,6 +310,31 @@ SetEnableSpecialEpisodes sets EnableSpecialEpisodes field to given value.
 `func (o *MainSettings) HasEnableSpecialEpisodes() bool`
 
 HasEnableSpecialEpisodes returns a boolean if a field has been set.
+
+### GetVersionCheck
+
+`func (o *MainSettings) GetVersionCheck() bool`
+
+GetVersionCheck returns the VersionCheck field if non-nil, zero value otherwise.
+
+### GetVersionCheckOk
+
+`func (o *MainSettings) GetVersionCheckOk() (*bool, bool)`
+
+GetVersionCheckOk returns a tuple with the VersionCheck field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersionCheck
+
+`func (o *MainSettings) SetVersionCheck(v bool)`
+
+SetVersionCheck sets VersionCheck field to given value.
+
+### HasVersionCheck
+
+`func (o *MainSettings) HasVersionCheck() bool`
+
+HasVersionCheck returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **RootFolder** | Pointer to **string** |  | [optional] 
 **LanguageProfileId** | Pointer to **float32** |  | [optional] 
 **UserId** | Pointer to **NullableFloat32** |  | [optional] 
+**IgnoreQuota** | Pointer to **bool** | If true, this request will not count against the user&#39;s quota. Requires MANAGE_REQUESTS permission. | [optional] 
 
 ## Methods
 
@@ -284,6 +285,31 @@ HasUserId returns a boolean if a field has been set.
 `func (o *CreateRequestRequest) UnsetUserId()`
 
 UnsetUserId ensures that no value is present for UserId, not even an explicit nil
+### GetIgnoreQuota
+
+`func (o *CreateRequestRequest) GetIgnoreQuota() bool`
+
+GetIgnoreQuota returns the IgnoreQuota field if non-nil, zero value otherwise.
+
+### GetIgnoreQuotaOk
+
+`func (o *CreateRequestRequest) GetIgnoreQuotaOk() (*bool, bool)`
+
+GetIgnoreQuotaOk returns a tuple with the IgnoreQuota field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIgnoreQuota
+
+`func (o *CreateRequestRequest) SetIgnoreQuota(v bool)`
+
+SetIgnoreQuota sets IgnoreQuota field to given value.
+
+### HasIgnoreQuota
+
+`func (o *CreateRequestRequest) HasIgnoreQuota() bool`
+
+HasIgnoreQuota returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

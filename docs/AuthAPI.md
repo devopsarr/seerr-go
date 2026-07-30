@@ -5,9 +5,12 @@ All URIs are relative to *http://localhost:5055/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateAuthJellyfin**](AuthAPI.md#CreateAuthJellyfin) | **Post** /auth/jellyfin | Sign in using a Jellyfin username and password
+[**CreateAuthJellyfinQuickconnectAuthenticate**](AuthAPI.md#CreateAuthJellyfinQuickconnectAuthenticate) | **Post** /auth/jellyfin/quickconnect/authenticate | Authenticate with Quick Connect
+[**CreateAuthJellyfinQuickconnectInitiate**](AuthAPI.md#CreateAuthJellyfinQuickconnectInitiate) | **Post** /auth/jellyfin/quickconnect/initiate | Initiate Jellyfin Quick Connect
 [**CreateAuthLocal**](AuthAPI.md#CreateAuthLocal) | **Post** /auth/local | Sign in using a local account
 [**CreateAuthLogout**](AuthAPI.md#CreateAuthLogout) | **Post** /auth/logout | Sign out and clear session cookie
 [**CreateAuthPlex**](AuthAPI.md#CreateAuthPlex) | **Post** /auth/plex | Sign in using a Plex token
+[**GetAuthJellyfinQuickconnectCheck**](AuthAPI.md#GetAuthJellyfinQuickconnectCheck) | **Get** /auth/jellyfin/quickconnect/check | Check Quick Connect authorization status
 [**GetAuthMe**](AuthAPI.md#GetAuthMe) | **Get** /auth/me | Get logged-in user
 
 
@@ -71,6 +74,133 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAuthJellyfinQuickconnectAuthenticate
+
+> User CreateAuthJellyfinQuickconnectAuthenticate(ctx).CreateAuthJellyfinQuickconnectAuthenticateRequest(createAuthJellyfinQuickconnectAuthenticateRequest).Execute()
+
+Authenticate with Quick Connect
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	seerrClient "github.com/devopsarr/seerr-go/seerr"
+)
+
+func main() {
+	createAuthJellyfinQuickconnectAuthenticateRequest := *seerrClient.NewCreateAuthJellyfinQuickconnectAuthenticateRequest("Secret_example") // CreateAuthJellyfinQuickconnectAuthenticateRequest | 
+
+	configuration := seerrClient.NewConfiguration()
+	apiClient := seerrClient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthAPI.CreateAuthJellyfinQuickconnectAuthenticate(context.Background()).CreateAuthJellyfinQuickconnectAuthenticateRequest(createAuthJellyfinQuickconnectAuthenticateRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthAPI.CreateAuthJellyfinQuickconnectAuthenticate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateAuthJellyfinQuickconnectAuthenticate`: User
+	fmt.Fprintf(os.Stdout, "Response from `AuthAPI.CreateAuthJellyfinQuickconnectAuthenticate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAuthJellyfinQuickconnectAuthenticateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createAuthJellyfinQuickconnectAuthenticateRequest** | [**CreateAuthJellyfinQuickconnectAuthenticateRequest**](CreateAuthJellyfinQuickconnectAuthenticateRequest.md) |  | 
+
+### Return type
+
+[**User**](User.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAuthJellyfinQuickconnectInitiate
+
+> CreateAuthJellyfinQuickconnectInitiate2XXResponse CreateAuthJellyfinQuickconnectInitiate(ctx).Execute()
+
+Initiate Jellyfin Quick Connect
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	seerrClient "github.com/devopsarr/seerr-go/seerr"
+)
+
+func main() {
+
+	configuration := seerrClient.NewConfiguration()
+	apiClient := seerrClient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthAPI.CreateAuthJellyfinQuickconnectInitiate(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthAPI.CreateAuthJellyfinQuickconnectInitiate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateAuthJellyfinQuickconnectInitiate`: CreateAuthJellyfinQuickconnectInitiate2XXResponse
+	fmt.Fprintf(os.Stdout, "Response from `AuthAPI.CreateAuthJellyfinQuickconnectInitiate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAuthJellyfinQuickconnectInitiateRequest struct via the builder pattern
+
+
+### Return type
+
+[**CreateAuthJellyfinQuickconnectInitiate2XXResponse**](CreateAuthJellyfinQuickconnectInitiate2XXResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -264,6 +394,72 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAuthJellyfinQuickconnectCheck
+
+> GetAuthJellyfinQuickconnectCheck2XXResponse GetAuthJellyfinQuickconnectCheck(ctx).Secret(secret).Execute()
+
+Check Quick Connect authorization status
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	seerrClient "github.com/devopsarr/seerr-go/seerr"
+)
+
+func main() {
+	secret := "secret_example" // string | The secret returned from the initiate endpoint
+
+	configuration := seerrClient.NewConfiguration()
+	apiClient := seerrClient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuthAPI.GetAuthJellyfinQuickconnectCheck(context.Background()).Secret(secret).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuthAPI.GetAuthJellyfinQuickconnectCheck``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAuthJellyfinQuickconnectCheck`: GetAuthJellyfinQuickconnectCheck2XXResponse
+	fmt.Fprintf(os.Stdout, "Response from `AuthAPI.GetAuthJellyfinQuickconnectCheck`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAuthJellyfinQuickconnectCheckRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **secret** | **string** | The secret returned from the initiate endpoint | 
+
+### Return type
+
+[**GetAuthJellyfinQuickconnectCheck2XXResponse**](GetAuthJellyfinQuickconnectCheck2XXResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
