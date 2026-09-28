@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**CreateDiscoverAdd**](SettingsAPI.md#CreateDiscoverAdd) | **Post** /settings/discover/add | Add a new slider
 [**CreateInitialize**](SettingsAPI.md#CreateInitialize) | **Post** /settings/initialize | Initialize application
 [**CreateJellyfin**](SettingsAPI.md#CreateJellyfin) | **Post** /settings/jellyfin | Update Jellyfin settings
+[**CreateJellyfinLibrarySync**](SettingsAPI.md#CreateJellyfinLibrarySync) | **Post** /settings/jellyfin/library/sync | Sync Jellyfin libraries
 [**CreateJellyfinSync**](SettingsAPI.md#CreateJellyfinSync) | **Post** /settings/jellyfin/sync | Start full Jellyfin library sync
 [**CreateJobsCancel**](SettingsAPI.md#CreateJobsCancel) | **Post** /settings/jobs/{jobId}/cancel | Cancel a specific job
 [**CreateJobsRun**](SettingsAPI.md#CreateJobsRun) | **Post** /settings/jobs/{jobId}/run | Invoke a specific job
@@ -28,6 +29,7 @@ Method | HTTP request | Description
 [**CreateNotificationsWebhook**](SettingsAPI.md#CreateNotificationsWebhook) | **Post** /settings/notifications/webhook | Update webhook notification settings
 [**CreateNotificationsWebpush**](SettingsAPI.md#CreateNotificationsWebpush) | **Post** /settings/notifications/webpush | Update Web Push notification settings
 [**CreatePlex**](SettingsAPI.md#CreatePlex) | **Post** /settings/plex | Update Plex settings
+[**CreatePlexLibrarySync**](SettingsAPI.md#CreatePlexLibrarySync) | **Post** /settings/plex/library/sync | Sync Plex libraries
 [**CreatePlexSync**](SettingsAPI.md#CreatePlexSync) | **Post** /settings/plex/sync | Start full Plex library scan
 [**CreateRadarr**](SettingsAPI.md#CreateRadarr) | **Post** /settings/radarr | Create Radarr instance
 [**CreateSonarr**](SettingsAPI.md#CreateSonarr) | **Post** /settings/sonarr | Create Sonarr instance
@@ -84,6 +86,8 @@ Method | HTTP request | Description
 [**TestRadarr**](SettingsAPI.md#TestRadarr) | **Post** /settings/radarr/test | Test Radarr configuration
 [**TestSonarr**](SettingsAPI.md#TestSonarr) | **Post** /settings/sonarr/test | Test Sonarr configuration
 [**UpdateDiscover**](SettingsAPI.md#UpdateDiscover) | **Put** /settings/discover/{sliderId} | Update a single slider
+[**UpdateJellyfinLibrary**](SettingsAPI.md#UpdateJellyfinLibrary) | **Put** /settings/jellyfin/library/{libraryId} | Update a single Jellyfin library
+[**UpdatePlexLibrary**](SettingsAPI.md#UpdatePlexLibrary) | **Put** /settings/plex/library/{libraryId} | Update a single Plex library
 [**UpdateRadarr**](SettingsAPI.md#UpdateRadarr) | **Put** /settings/radarr/{radarrId} | Update Radarr instance
 [**UpdateSonarr**](SettingsAPI.md#UpdateSonarr) | **Put** /settings/sonarr/{sonarrId} | Update Sonarr instance
 
@@ -477,6 +481,67 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateJellyfinLibrarySync
+
+> []JellyfinLibrary CreateJellyfinLibrarySync(ctx).Execute()
+
+Sync Jellyfin libraries
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	seerrClient "github.com/devopsarr/seerr-go/seerr"
+)
+
+func main() {
+
+	configuration := seerrClient.NewConfiguration()
+	apiClient := seerrClient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.CreateJellyfinLibrarySync(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.CreateJellyfinLibrarySync``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateJellyfinLibrarySync`: []JellyfinLibrary
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.CreateJellyfinLibrarySync`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateJellyfinLibrarySyncRequest struct via the builder pattern
+
+
+### Return type
+
+[**[]JellyfinLibrary**](JellyfinLibrary.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [cookieAuth](../README.md#cookieAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1674,6 +1739,67 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreatePlexLibrarySync
+
+> []PlexLibrary CreatePlexLibrarySync(ctx).Execute()
+
+Sync Plex libraries
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	seerrClient "github.com/devopsarr/seerr-go/seerr"
+)
+
+func main() {
+
+	configuration := seerrClient.NewConfiguration()
+	apiClient := seerrClient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.CreatePlexLibrarySync(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.CreatePlexLibrarySync``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreatePlexLibrarySync`: []PlexLibrary
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.CreatePlexLibrarySync`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreatePlexLibrarySyncRequest struct via the builder pattern
+
+
+### Return type
+
+[**[]PlexLibrary**](PlexLibrary.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [cookieAuth](../README.md#cookieAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -3558,7 +3684,7 @@ Other parameters are passed through a pointer to a apiListDiscoverRequest struct
 
 ## ListJellyfinLibrary
 
-> []JellyfinLibrary ListJellyfinLibrary(ctx).Sync(sync).Enable(enable).Execute()
+> []JellyfinLibrary ListJellyfinLibrary(ctx).Execute()
 
 Get Jellyfin libraries
 
@@ -3577,12 +3703,10 @@ import (
 )
 
 func main() {
-	sync := "sync_example" // string | Syncs the current libraries with the current Jellyfin server (optional)
-	enable := "enable_example" // string | Comma separated list of libraries to enable. Any libraries not passed will be disabled! (optional)
 
 	configuration := seerrClient.NewConfiguration()
 	apiClient := seerrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SettingsAPI.ListJellyfinLibrary(context.Background()).Sync(sync).Enable(enable).Execute()
+	resp, r, err := apiClient.SettingsAPI.ListJellyfinLibrary(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ListJellyfinLibrary``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3594,17 +3718,12 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiListJellyfinLibraryRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sync** | **string** | Syncs the current libraries with the current Jellyfin server | 
- **enable** | **string** | Comma separated list of libraries to enable. Any libraries not passed will be disabled! | 
 
 ### Return type
 
@@ -3947,7 +4066,7 @@ Other parameters are passed through a pointer to a apiListPlexDevicesServersRequ
 
 ## ListPlexLibrary
 
-> []PlexLibrary ListPlexLibrary(ctx).Sync(sync).Enable(enable).Execute()
+> []PlexLibrary ListPlexLibrary(ctx).Execute()
 
 Get Plex libraries
 
@@ -3966,12 +4085,10 @@ import (
 )
 
 func main() {
-	sync := "sync_example" // string | Syncs the current libraries with the current Plex server (optional)
-	enable := "enable_example" // string | Comma separated list of libraries to enable. Any libraries not passed will be disabled! (optional)
 
 	configuration := seerrClient.NewConfiguration()
 	apiClient := seerrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SettingsAPI.ListPlexLibrary(context.Background()).Sync(sync).Enable(enable).Execute()
+	resp, r, err := apiClient.SettingsAPI.ListPlexLibrary(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ListPlexLibrary``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3983,17 +4100,12 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiListPlexLibraryRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sync** | **string** | Syncs the current libraries with the current Plex server | 
- **enable** | **string** | Comma separated list of libraries to enable. Any libraries not passed will be disabled! | 
 
 ### Return type
 
@@ -5227,6 +5339,150 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DiscoverSlider**](DiscoverSlider.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [cookieAuth](../README.md#cookieAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateJellyfinLibrary
+
+> JellyfinLibrary UpdateJellyfinLibrary(ctx, libraryId).UpdateJellyfinLibraryRequest(updateJellyfinLibraryRequest).Execute()
+
+Update a single Jellyfin library
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	seerrClient "github.com/devopsarr/seerr-go/seerr"
+)
+
+func main() {
+	libraryId := "libraryId_example" // string | 
+	updateJellyfinLibraryRequest := *seerrClient.NewUpdateJellyfinLibraryRequest(true) // UpdateJellyfinLibraryRequest | 
+
+	configuration := seerrClient.NewConfiguration()
+	apiClient := seerrClient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.UpdateJellyfinLibrary(context.Background(), libraryId).UpdateJellyfinLibraryRequest(updateJellyfinLibraryRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.UpdateJellyfinLibrary``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateJellyfinLibrary`: JellyfinLibrary
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.UpdateJellyfinLibrary`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**libraryId** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateJellyfinLibraryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **updateJellyfinLibraryRequest** | [**UpdateJellyfinLibraryRequest**](UpdateJellyfinLibraryRequest.md) |  | 
+
+### Return type
+
+[**JellyfinLibrary**](JellyfinLibrary.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [cookieAuth](../README.md#cookieAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdatePlexLibrary
+
+> PlexLibrary UpdatePlexLibrary(ctx, libraryId).UpdateJellyfinLibraryRequest(updateJellyfinLibraryRequest).Execute()
+
+Update a single Plex library
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	seerrClient "github.com/devopsarr/seerr-go/seerr"
+)
+
+func main() {
+	libraryId := "libraryId_example" // string | 
+	updateJellyfinLibraryRequest := *seerrClient.NewUpdateJellyfinLibraryRequest(true) // UpdateJellyfinLibraryRequest | 
+
+	configuration := seerrClient.NewConfiguration()
+	apiClient := seerrClient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SettingsAPI.UpdatePlexLibrary(context.Background(), libraryId).UpdateJellyfinLibraryRequest(updateJellyfinLibraryRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.UpdatePlexLibrary``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdatePlexLibrary`: PlexLibrary
+	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.UpdatePlexLibrary`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**libraryId** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdatePlexLibraryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **updateJellyfinLibraryRequest** | [**UpdateJellyfinLibraryRequest**](UpdateJellyfinLibraryRequest.md) |  | 
+
+### Return type
+
+[**PlexLibrary**](PlexLibrary.md)
 
 ### Authorization
 
