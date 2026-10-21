@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost:5055/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateOverriderule**](OverrideruleAPI.md#CreateOverriderule) | **Post** /overrideRule | Create override rule
+[**CreateOverrideruleAdvancedRequest**](OverrideruleAPI.md#CreateOverrideruleAdvancedRequest) | **Post** /overrideRule/advancedRequest | Advanced override rule request
 [**DeleteOverriderule**](OverrideruleAPI.md#DeleteOverriderule) | **Delete** /overrideRule/{ruleId} | Delete override rule by ID
 [**ListOverriderule**](OverrideruleAPI.md#ListOverriderule) | **Get** /overrideRule | Get override rules
 [**UpdateOverriderule**](OverrideruleAPI.md#UpdateOverriderule) | **Put** /overrideRule/{ruleId} | Update override rule
@@ -65,6 +66,72 @@ Other parameters are passed through a pointer to a apiCreateOverrideruleRequest 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateOverrideruleAdvancedRequest
+
+> CreateOverrideruleAdvancedRequest2XXResponse CreateOverrideruleAdvancedRequest(ctx).CreateOverrideruleAdvancedRequestRequest(createOverrideruleAdvancedRequestRequest).Execute()
+
+Advanced override rule request
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	seerrClient "github.com/devopsarr/seerr-go/seerr"
+)
+
+func main() {
+	createOverrideruleAdvancedRequestRequest := *seerrClient.NewCreateOverrideruleAdvancedRequestRequest("MediaType_example", float32(1)) // CreateOverrideruleAdvancedRequestRequest | 
+
+	configuration := seerrClient.NewConfiguration()
+	apiClient := seerrClient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OverrideruleAPI.CreateOverrideruleAdvancedRequest(context.Background()).CreateOverrideruleAdvancedRequestRequest(createOverrideruleAdvancedRequestRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OverrideruleAPI.CreateOverrideruleAdvancedRequest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateOverrideruleAdvancedRequest`: CreateOverrideruleAdvancedRequest2XXResponse
+	fmt.Fprintf(os.Stdout, "Response from `OverrideruleAPI.CreateOverrideruleAdvancedRequest`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateOverrideruleAdvancedRequestRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createOverrideruleAdvancedRequestRequest** | [**CreateOverrideruleAdvancedRequestRequest**](CreateOverrideruleAdvancedRequestRequest.md) |  | 
+
+### Return type
+
+[**CreateOverrideruleAdvancedRequest2XXResponse**](CreateOverrideruleAdvancedRequest2XXResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [cookieAuth](../README.md#cookieAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
