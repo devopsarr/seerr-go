@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ApplicationTitle** | Pointer to **string** |  | [optional] 
 **ApplicationUrl** | Pointer to **string** |  | [optional] 
 **HideAvailable** | Pointer to **bool** |  | [optional] 
+**HideRequested** | Pointer to **bool** |  | [optional] 
 **PartialRequestsEnabled** | Pointer to **bool** |  | [optional] 
 **LocalLogin** | Pointer to **bool** |  | [optional] 
 **MediaServerType** | Pointer to **float32** |  | [optional] 
@@ -160,6 +161,31 @@ SetHideAvailable sets HideAvailable field to given value.
 `func (o *MainSettings) HasHideAvailable() bool`
 
 HasHideAvailable returns a boolean if a field has been set.
+
+### GetHideRequested
+
+`func (o *MainSettings) GetHideRequested() bool`
+
+GetHideRequested returns the HideRequested field if non-nil, zero value otherwise.
+
+### GetHideRequestedOk
+
+`func (o *MainSettings) GetHideRequestedOk() (*bool, bool)`
+
+GetHideRequestedOk returns a tuple with the HideRequested field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHideRequested
+
+`func (o *MainSettings) SetHideRequested(v bool)`
+
+SetHideRequested sets HideRequested field to given value.
+
+### HasHideRequested
+
+`func (o *MainSettings) HasHideRequested() bool`
+
+HasHideRequested returns a boolean if a field has been set.
 
 ### GetPartialRequestsEnabled
 
