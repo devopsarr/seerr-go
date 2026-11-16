@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.2.1 (2026-11-16)
+
+## What's Changed
+* fix: add .goreleaser.yml template and update Makefile for Go release by @devopsarr[bot] in https://github.com/devopsarr/seerr-go/pull/4
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.24.0 by @devopsarr[bot] in https://github.com/devopsarr/seerr-go/pull/6
+* fix(deps): update dependency seerr-team/seerr to v3.4.0 by @devopsarr[bot] in https://github.com/devopsarr/seerr-go/pull/7
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.25.0 by @devopsarr[bot] in https://github.com/devopsarr/seerr-go/pull/8
+* fix(deps): update dependency seerr-team/seerr to v3.5.0 by @devopsarr[bot] in https://github.com/devopsarr/seerr-go/pull/9
+* fix(deps): update dependency seerr-team/seerr to v3.5.1 by @devopsarr[bot] in https://github.com/devopsarr/seerr-go/pull/11
+* chore: align-versions by @devopsarr[bot] in https://github.com/devopsarr/seerr-go/pull/12
+* fix: add go releaser file version by @devopsarr[bot] in https://github.com/devopsarr/seerr-go/pull/13
+* chore: edit changelog type to github by @devopsarr[bot] in https://github.com/devopsarr/seerr-go/pull/14
+* fix(deps): update dependency seerr-team/seerr to v3.5.2 by @devopsarr[bot] in https://github.com/devopsarr/seerr-go/pull/15
+
+
+**Full Changelog**: https://github.com/devopsarr/seerr-go/compare/v0.2.0...v0.2.1
+
 ## [0.2.0](https://github.com/devopsarr/seerr-go/compare/v0.1.0...v0.2.0) (2026-06-16)
 
 
