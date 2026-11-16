@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## CreateWatchlist
 
-> Watchlist CreateWatchlist(ctx).Watchlist(watchlist).Execute()
+> Watchlist CreateWatchlist(ctx).WatchlistRequest(watchlistRequest).Execute()
 
 Add media to watchlist
 
@@ -28,11 +28,11 @@ import (
 )
 
 func main() {
-	watchlist := *seerrClient.NewWatchlist() // Watchlist | 
+	watchlistRequest := *seerrClient.NewWatchlistRequest(float32(1), "MediaType_example") // WatchlistRequest | 
 
 	configuration := seerrClient.NewConfiguration()
 	apiClient := seerrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WatchlistAPI.CreateWatchlist(context.Background()).Watchlist(watchlist).Execute()
+	resp, r, err := apiClient.WatchlistAPI.CreateWatchlist(context.Background()).WatchlistRequest(watchlistRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `WatchlistAPI.CreateWatchlist``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,7 +53,7 @@ Other parameters are passed through a pointer to a apiCreateWatchlistRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **watchlist** | [**Watchlist**](Watchlist.md) |  | 
+ **watchlistRequest** | [**WatchlistRequest**](WatchlistRequest.md) |  | 
 
 ### Return type
 
